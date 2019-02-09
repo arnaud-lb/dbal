@@ -758,8 +758,8 @@ class Connection implements DriverConnection
     /**
      * Quotes a given input parameter.
      *
-     * @param mixed       $input The parameter to be quoted.
-     * @param string|null $type  The type of the parameter.
+     * @param mixed        $input The parameter to be quoted.
+     * @param integer|null $type  The type of the parameter.
      *
      * @return string The quoted parameter.
      */
@@ -1066,7 +1066,7 @@ class Connection implements DriverConnection
     /**
      * Fetches the SQLSTATE associated with the last database operation.
      *
-     * @return integer The last error code.
+     * @return string|null The last error code.
      */
     public function errorCode()
     {
@@ -1176,9 +1176,7 @@ class Connection implements DriverConnection
     }
 
     /**
-     * Starts a transaction by suspending auto-commit mode.
-     *
-     * @return void
+     * {@inheritDoc}
      */
     public function beginTransaction()
     {
@@ -1208,12 +1206,7 @@ class Connection implements DriverConnection
     }
 
     /**
-     * Commits the current transaction.
-     *
-     * @return void
-     *
-     * @throws \Doctrine\DBAL\ConnectionException If the commit failed due to no active transaction or
-     *                                            because the transaction was marked for rollback only.
+     * {@inheritDoc}
      */
     public function commit()
     {

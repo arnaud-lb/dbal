@@ -48,8 +48,8 @@ interface Connection
     /**
      * Quotes a string for use in a query.
      *
-     * @param string  $input
-     * @param integer $type
+     * @param mixed   $input
+     * @param integer|null $type
      *
      * @return string
      */
